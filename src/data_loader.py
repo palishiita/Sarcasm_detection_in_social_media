@@ -1,33 +1,16 @@
-{
- "cells": [
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "980618ad-cb68-479f-b6c8-82fac2bfc22c",
-   "metadata": {},
-   "outputs": [],
-   "source": []
-  }
- ],
- "metadata": {
-  "kernelspec": {
-   "display_name": "Python 3 (ipykernel)",
-   "language": "python",
-   "name": "python3"
-  },
-  "language_info": {
-   "codemirror_mode": {
-    "name": "ipython",
-    "version": 3
-   },
-   "file_extension": ".py",
-   "mimetype": "text/x-python",
-   "name": "python",
-   "nbconvert_exporter": "python",
-   "pygments_lexer": "ipython3",
-   "version": "3.13.5"
-  }
- },
- "nbformat": 4,
- "nbformat_minor": 5
-}
+import pandas as pd
+
+def load_spirs(path):
+    return pd.read_csv(path)
+
+def load_reddit(path):
+    return pd.read_csv(path)
+
+def load_news(path):
+    return pd.read_json(path, lines=True)
+
+def load_all(config):
+    spirs = load_spirs(config["spirs_path"])
+    reddit = load_reddit(config["reddit_path"])
+    news = load_news(config["news_path"])
+    return spirs, reddit, news
