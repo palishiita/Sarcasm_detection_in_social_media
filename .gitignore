@@ -1,6 +1,13 @@
-/data
-/data/raw/newsheadline
-/data/raw/sarc_reddit
-/data/raw/semeval
-/data/processed
-/models
+# Ignore the contents of these folders
+data/raw/*
+data/processed/*
+models/*
+
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!models/.gitkeep
+
+*.pkl
+*.csv
+*.json
+*.txt
