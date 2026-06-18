@@ -1,5 +1,7 @@
+import os
 import re
 import pandas as pd
+from sklearn.model_selection import train_test_split
 
 
 def clean_text(text):
@@ -27,8 +29,6 @@ def drop_empty(df, text_column, label_column="label"):
 
 def split_and_save(df, output_dir, name, test_size=0.2, random_state=42):
     """Stratified train/test split and save to processed folder."""
-    from sklearn.model_selection import train_test_split
-    import os
 
     train_df, test_df = train_test_split(
         df,
